@@ -1,0 +1,42 @@
+//인자를 가진 믹스인 공통작업을하면서 조금씩 속성값이틀릴경우 인자를 받아서 처리할경우 유용하게 쓰일듯
+
+
+/*
+.border-radius (@radius) {
+	border-radius: @radius;
+	-moz-border-radius: @radius;
+	-webkit-border-radius: @radius;
+}
+*/
+//이런식으로 인자를 디폴트로 가질수도있고 위에 경우처럼 인자 디폴트 값이 없어도 무방하다.
+.border-radius (@radius: 5px) {
+	border-radius: @radius;
+	-moz-border-radius: @radius;
+	-webkit-border-radius: @radius;
+}
+
+.radius1 {
+	width : 500px; margin:0 auto; border:1px solid red;
+	.border-radius(5px);
+}
+
+.radius2 {
+	width : 500px; margin:0 auto; border:1px solid red;
+	.border-radius(10px);
+}
+
+.box-shadow (@x: 0, @y: 0, @blur: 1px, @color: #000) {
+	box-shadow: @arguments;
+	-moz-box-shadow: @arguments;
+	-webkit-box-shadow: @arguments;
+}
+
+.box1 {
+	width : 500px; margin:0 auto; border:1px solid red;
+	.box-shadow(2px, 5px);
+}
+
+.box2 {
+	width : 500px; margin:0 auto; border:1px solid red;
+	.box-shadow(2px, 5px, 10px, red);
+}
