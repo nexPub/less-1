@@ -1,0 +1,24 @@
+//중첩관련 규칙
+//가상선택자 사용할때 &
+#header {
+	color: black;
+
+	.navigation {
+		font-size: 18px;
+	}
+	.logo {
+		width: 300px;
+		&:hover { background:red }
+	}
+}
+
+//bordered랑float이랑 같이있는 클래스한테 float속성준다( & )
+.bordered {
+	color: red; margin-right:20px;
+	&.float {
+		float: left;
+	}
+	.top {
+		margin: 5px;
+	}
+}
